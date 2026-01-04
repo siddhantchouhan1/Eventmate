@@ -1,0 +1,48 @@
+/* Home.css */
+
+.home-page {
+    background-color: var(--background-body);
+    min-height: 100vh;
+}
+
+.hero {
+    display: none;
+    /* Removed as we use Carousel */
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+    padding-left: 0;
+    border-left: none;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    /* Slightly narrower for BMS feel */
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 4rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem;
+    color: #888;
+}
+
+.event-footer {
+    display: none;
+    /* BMS lists usually just show Title + Genre on card */
+}
+
+/* We can add a "Book" button overlay on hover if desired, but BMS usually redirects on click */

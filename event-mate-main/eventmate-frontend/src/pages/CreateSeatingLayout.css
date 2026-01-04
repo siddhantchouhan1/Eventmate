@@ -1,0 +1,289 @@
+/* CSS for Advanced Layout Editor (Dark Mode) */
+.layout-editor-page {
+    padding: 1.5rem;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* --- Layout Container --- */
+.editor-workspace {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* --- Left Toolbar --- */
+.editor-toolbar {
+    width: 280px;
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.tool-section {
+    margin-bottom: 1.5rem;
+}
+
+.tool-section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+/* Tools Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.tool-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tool-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.tool-btn.active {
+    background: rgba(248, 68, 100, 0.15);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Tiers List */
+.tiers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tier-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tier-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tier-item.active {
+    border-color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.tier-color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.tier-info {
+    flex: 1;
+}
+
+.tier-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.tier-price {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- Center Canvas --- */
+.editor-canvas-container {
+    flex: 1;
+    background: #121212;
+    /* Darker than page bg for contrast */
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-toolbar {
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.canvas-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.canvas-scroll-area {
+    flex: 1;
+    overflow: auto;
+    padding: 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    /* Dot pattern background */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.seat-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    user-select: none;
+    /* Prevent text selection while painting */
+}
+
+.grid-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.row-handle {
+    width: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.row-handle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.seat-cell {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.seat-cell:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.seat-cell.gap {
+    background: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    cursor: crosshair;
+}
+
+.seat-cell.gap:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Modals / Inputs */
+.input-dark {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.input-dark:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.seat-cell.just-colored {
+    animation: pop 0.2s ease-out;
+}

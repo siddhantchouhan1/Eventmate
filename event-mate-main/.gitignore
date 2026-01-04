@@ -1,0 +1,47 @@
+# ========= IntelliJ / IDE =========
+.idea/
+.vscode/
+
+# ========= Maven =========
+target/
+.mvn/
+mvnw
+mvnw.cmd
+
+# ========= Logs =========
+*.log
+logs/
+*.log.*
+
+# ========= Environment / Secrets =========
+.env
+application.properties
+
+# ========= OS =========
+.DS_Store
+Thumbs.db
+
+# ========= React / Frontend =========
+node_modules/
+dist/
+build/
+
+# ========= Misc =========
+*.tmp
+*.bak
+*.swp
+
+
+# ========= Debug / Logs / Temp =========
+*.log
+*.json
+run_log.txt
+test_log.txt
+debug_*.py
+debug_*.ps1
+verify_fix.py
+
+# ========= Local test / scripts =========
+test_*.ps1
+test_*.json
+seed_events.py
